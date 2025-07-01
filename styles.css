@@ -1,0 +1,152 @@
+body {
+  font-family: 'Arial', sans-serif;
+  /* Sets the font for the entire page */
+
+  padding: 20px;
+  /* Adds space inside the body edges */
+
+  margin: 0;
+  /* Removes default browser margin */
+
+  min-height: 100vh;
+  /* Ensures the body takes at least full viewport height */
+
+  background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+  /* Sets a background image, centers it, and fixes it during scroll */
+
+  background-size: cover;
+  /* Makes the background image cover the whole screen */
+
+  position: relative;
+  /* Needed to allow layering with ::before overlay */
+
+  color: #fff;
+  /* Default text color is white for readability over dark background */
+}
+
+body::before {
+  content: "";
+  /* Creates an empty element overlay */
+
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  /* Positions overlay to cover entire viewport */
+
+  background: rgba(0, 0, 0, 0.6);
+  /* Semi-transparent black overlay for better text contrast */
+
+  z-index: -1;
+  /* Places overlay behind the content */
+}
+
+h1 {
+  font-size: 3em;
+  /* Large heading */
+
+  margin-bottom: 20px;
+  /* Space below heading */
+
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  /* Shadow behind text for better readability */
+}
+
+.search-container {
+  margin-bottom: 20px;
+  /* Adds space below the search box */
+}
+
+#searchInput {
+  padding: 10px;
+  width: 250px;
+  border-radius: 5px;
+  border: none;
+  /* Styles the search input field */
+}
+
+button {
+  padding: 10px 15px;
+  margin-left: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ff7043;
+  color: #fff;
+  transition: background-color 0.3s;
+  /* Styles buttons and adds hover transition */
+}
+
+button:hover {
+  background-color: #ff5722;
+  /* Darker shade on hover */
+}
+
+#recipeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  /* Container for recipe cards — flexible grid with gaps */
+}
+
+.recipe-card {
+  background: rgba(255, 255, 255, 0.9);
+  /* White card with slight transparency */
+
+  border-radius: 10px;
+  width: 300px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  /* Card styling with rounded corners and shadow */
+
+  color: #333;
+  text-align: left;
+}
+
+.recipe-card img {
+  max-width: 100%;
+  /* Make sure image doesn't exceed card width */
+
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.recipe-card h2 {
+  font-size: 1.5em;
+  margin: 0 0 10px;
+  /* Recipe title styling */
+}
+
+.recipe-card h3 {
+  margin: 10px 0 5px;
+  /* Subheading spacing */
+}
+
+.recipe-card ul {
+  padding-left: 20px;
+  margin: 0;
+  /* Proper indent for ingredient list */
+}
+
+.recipe-card p {
+  font-size: 0.95em;
+  /* Slightly smaller text for instructions */
+}
+
+@media (max-width: 600px) {
+  /* Responsive design for small screens (e.g. mobile) */
+
+  #searchInput {
+    width: 150px;
+    /* Shrink input box on mobile */
+  }
+
+  h1 {
+    font-size: 2em;
+    /* Smaller heading on mobile */
+  }
+
+  .recipe-card {
+    width: 90%;
+    /* Recipe card stretches across most of the screen on mobile */
+  }
+}
