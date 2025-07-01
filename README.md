@@ -9,4 +9,4 @@ A simple and responsive web app built with HTML, CSS, and JavaScript that lets u
 - Displays ingredients and cooking instructions
 
 ## Demo
-link to be uploaded
+https://Nitish-015.github.io/Recipe-Finder/
